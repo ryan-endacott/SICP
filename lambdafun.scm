@@ -71,10 +71,11 @@
     (if (zero? n) 0
         (+ 1 (getnum (dec n)))))
   (cond 
-        ((list? n)
-          (each (lambda (el) (print el) (display " ")) n))
-        ((number? n) 
-          (display (getnum n)) zero)))
+      ((list? n)
+        (each (lambda (el) (print el) (display " ")) n))
+      ((number? n) 
+        (display (getnum n))
+        n)))
          
 
 
@@ -96,6 +97,8 @@
       (add x (mul x (dec y)))))
 
 ; Some more numbers
+(define three (inc two))
+(define four (sub five one))
 (define ten (mul five two))
 (define one-hundred (mul ten ten))
 (define fifty (mul ten five))
@@ -113,7 +116,3 @@
 
 ; Used to reset the REPL on REPL.it...
 (define (loop) (loop))
-
-
-
-
